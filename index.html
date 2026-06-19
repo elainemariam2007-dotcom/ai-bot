@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>AI Assistant</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+
+<div class="sidebar">
+
+    <h2>AI Assistant</h2>
+
+    <button onclick="newChat()">
+        + New Chat
+    </button>
+    <div id="chat-list"></div>
+
+</div>
+
+<div class="main">
+
+    <div id="chat-box"></div>
+
+    <div class="input-area">
+
+        <input
+            id="message"
+            type="text"
+            placeholder="Message AI Assistant..."
+            onkeydown="if(event.key==='Enter')sendMessage()"
+        >
+
+        <button onclick="startVoice()">
+            🎤
+        </button>
+
+        <button onclick="sendMessage()">
+            Send
+        </button>
+        <button id="voiceToggle">
+🔊 Voice On
+</button>
+<div class="upload-area">
+
+    <input
+    type="file"
+    id="pdfUpload"
+    accept=".pdf">
+
+</div>
+
+    </div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
